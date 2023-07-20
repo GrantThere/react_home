@@ -12,7 +12,7 @@ const  Posts = ({userId}) => {
 
     return (
         <div>
-            {posts.map(post => <Post post={post}/>)}
+            {posts.map(post => <Post key={post.id} post={post}/>)}
         </div>
     )
 }

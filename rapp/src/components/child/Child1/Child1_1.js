@@ -1,13 +1,13 @@
 import React, {useContext} from 'react';
 import {Context} from "../../../App";
 
-const Child1_1 = () => {
-    const {data} =useContext(Context)
+const Child11 = () => {
+    const {data} = useContext(Context);
     return (
         <div>
-            <div>{data}</div>
+            {data}
         </div>
     );
 };
 
-export default Child1_1;
+export default Child11;

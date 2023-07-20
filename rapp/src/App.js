@@ -8,14 +8,14 @@ export const Context = createContext(null);
 const App = () => {
     const [data, setData] = useState([1,2,3]);
     return (
-        <Context.Provider value={{setData,data}}>
+        <Context.Provider value={{data,setData}}>
             <div>
-               <Child1/>
-               <Child2/>
+                <Child1/>
+                <Child2/>
             </div>
         </Context.Provider>
 
     );
 };
 
-export default {App};
+export default App;

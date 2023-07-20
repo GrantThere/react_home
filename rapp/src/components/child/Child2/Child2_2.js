@@ -1,14 +1,13 @@
-import React, { useContext} from 'react';
+import React, {useContext} from 'react';
 import {Context} from "../../../App";
 
-
-const Child2_2 = () => {
-    const {setArr} = useContext(Context);
+const Child22 = () => {
+    const {setData} = useContext(Context);
     return (
         <div>
-           <button onClick={()=>setArr('Cliked')}>clic</button>
+            <button onClick={()=>setData('CCCCCC')}>Child2_2</button>
         </div>
     );
 };
 
-export default Child2_2;
+export default Child22;

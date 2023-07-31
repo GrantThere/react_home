@@ -1,6 +1,9 @@
 import React from 'react';
 
-const Car = ({car}) => {
+const Car = ({car,setUpdCar}) => {
+    const update = () => {
+        setUpdCar(car.id)
+    }
     return (
         <div>
             <hr/>
@@ -8,6 +11,7 @@ const Car = ({car}) => {
             <div>brand: {car.brand}</div>
             <div>price: {car.price}</div>
             <div>year: {car.year}</div>
+            <button onSubmit={update}>update</button>
             <hr/>
         </div>
     );

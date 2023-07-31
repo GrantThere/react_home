@@ -5,6 +5,7 @@ import Car from "./car/Car";
 const Cars = () => {
     const [cars, setCars] = useState([]);
     const [change, setChange] = useState(false);
+    const [updCar, setUpdCar] = useState(null);
 
     useEffect(()=> {
         fetch('http://owu.linkpc.net/carsAPI/v1/cars')
@@ -13,8 +14,8 @@ const Cars = () => {
         },[change])
     return (
         <div>
-            <CarForm setChange={setChange}/>
-            {cars.map(car=><Car key={car.id} car={car} />)}
+            <CarForm setChange={setChange} updCar={updCar}/>
+            {cars.map(car=><Car key={car.id} car={car} setUpdCar={setUpdCar}/>)}
 
         </div>
     );

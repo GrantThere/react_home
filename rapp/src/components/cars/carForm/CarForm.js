@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 
-const CarForm = ({setChange}) => {
+const CarForm = ({setChange, updCar}) => {
     const [car, setCar] = useState({
-        id:'',
         brand: '',
         price: '',
         year: ''
@@ -23,8 +22,8 @@ const CarForm = ({setChange}) => {
             .then(setChange=>!setChange)
     }
 
-    const update = (car) => {
-        fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${car.id}`, {
+    const update = () => {
+        fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${updCar}`, {
             headers:{'content-type':'application/json'},
             method:'PUT',
             body:JSON.stringify(car)
@@ -32,18 +31,13 @@ const CarForm = ({setChange}) => {
             .then(setChange=>!setChange)}
     return (
         <div>
-        <form >
+        <form onSubmit={()=>!updCar?add:update}>
             <label>BRAND:<input type={'text'} value={car.brand} name={'brand'}  onChange={inputHandle}/></label>
             <label>PRICE:<input type={'text'} value={car.price} name={'price'}  onChange={inputHandle}/></label>
             <label>YEAR:<input type={'text'} value={car.year} name={'year'}  onChange={inputHandle}/></label>
             <br/>
-            <button onClick={add}>ADD</button>
+            <button>ADD</button>
             <br/>
-        </form>
-        <form>
-            <label>ID:<input type={'text'} value={car.id} name={'id'}  onChange={inputHandle}/></label>
-            <button>DELETE</button>
-            <button onClick={update}>UPDATE</button>
         </form>
         </div>
     );

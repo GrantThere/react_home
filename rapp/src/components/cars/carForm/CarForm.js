@@ -32,15 +32,15 @@ const CarForm = ({setChange}) => {
             .then(setChange=>!setChange)}
     return (
         <div>
-        <form onClick={add}>
+        <form >
             <label>BRAND:<input type={'text'} value={car.brand} name={'brand'}  onChange={inputHandle}/></label>
             <label>PRICE:<input type={'text'} value={car.price} name={'price'}  onChange={inputHandle}/></label>
             <label>YEAR:<input type={'text'} value={car.year} name={'year'}  onChange={inputHandle}/></label>
             <br/>
-            <button>ADD</button>
+            <button onClick={add}>ADD</button>
             <br/>
         </form>
-        <form onSubmit={update}>
+        <form>
             <label>ID:<input type={'text'} value={car.id} name={'id'}  onChange={inputHandle}/></label>
             <button>DELETE</button>
             <button onClick={update}>UPDATE</button>

@@ -2,7 +2,8 @@ import React from 'react';
 
 const Car = ({car,setUpdCar}) => {
     const update = () => {
-        setUpdCar(car.id)
+        setUpdCar(car.id);
+        console.log(car.id)
     }
     return (
         <div>
@@ -11,7 +12,7 @@ const Car = ({car,setUpdCar}) => {
             <div>brand: {car.brand}</div>
             <div>price: {car.price}</div>
             <div>year: {car.year}</div>
-            <button onSubmit={update}>update</button>
+            <button onClick={update}>update</button>
             <hr/>
         </div>
     );

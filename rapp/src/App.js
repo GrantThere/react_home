@@ -1,6 +1,5 @@
 import './App.css';
-import UserAD from "./components/UserAD/UserAD";
-import Cars from "./components/cars/Cars";
+import Cars_UF from "./components/Cars_UF/Cars_UF";
 
 
 
@@ -10,7 +9,7 @@ const App = () => {
 
     return (
         <div>
-            <Cars/>
+            <Cars_UF/>
         </div>
     );
 };

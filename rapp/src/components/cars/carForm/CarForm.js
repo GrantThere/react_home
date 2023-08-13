@@ -20,9 +20,10 @@ const CarForm = ({setChange, updCar}) => {
             method: 'POST'
         }).then(value => value.json())
             .then(setChange=>!setChange)
-    }
+    };
 
-    const update = () => {
+    const update = (e) => {
+        e.preventDefault()
         fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${updCar}`, {
             headers:{'content-type':'application/json'},
             method:'PUT',

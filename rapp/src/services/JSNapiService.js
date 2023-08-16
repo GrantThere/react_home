@@ -4,12 +4,16 @@ const instance = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com'
 })
 
-const lincsAPIcall = {
+export const lincsAPIcall = {
     todos: '/todos',
-    albums: '/albums'
+    albums: '/albums',
+    comments: '/comments',
+    postIdd: (id) =>`/${id}`
 }
 
 export const JSNapiService = {
     getTodos: () => instance.get(lincsAPIcall.todos),
-    getalbums: () => instance.get(lincsAPIcall.albums)
+    getalbums: () => instance.get(lincsAPIcall.albums),
+    getComments: () => instance.get(lincsAPIcall.comments),
+    getPost: (id) => instance.get(lincsAPIcall.postIdd(id))
 }

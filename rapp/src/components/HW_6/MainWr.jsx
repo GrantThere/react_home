@@ -1,14 +1,17 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import Nav from "./Nav";
+import React, {Component} from 'react';
+import {NavLink} from 'react-router-dom';
+import {AllRoutes} from "../../Routing/AllRoutes";
 
-const MainWr = () => {
-    return (
-        <div>
-            <Nav/>
-            <Outlet/>
-        </div>
-    );
-};
+class MainWr extends Component {
+    render() {
+        return (
+            <div>
+                <NavLink to={AllRoutes.CARS}>CARS</NavLink>
+                <NavLink to={AllRoutes.POSTS}>POSTS</NavLink>
+                <NavLink to={AllRoutes.COMMENTS}>COMMENTS</NavLink>
+            </div>
+        );
+    }
+}
 
-export default MainWr;
+export  {MainWr};

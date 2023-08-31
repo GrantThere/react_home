@@ -1,7 +1,6 @@
 export const AllRoutes = {
     MAIN: '',
-    TODOS: '/todos',
-    ALBUMS: '/albums',
+    CARS: '/cars',
     COMMENTS: '/comments',
-    POST: 'posts/:postId'
+    POSTS: '/posts'
 }

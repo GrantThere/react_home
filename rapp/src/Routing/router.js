@@ -1,9 +1,9 @@
 import {createBrowserRouter} from "react-router-dom";
-import MainWr from "../components/HW_6/MainWr";
+import {MainWr} from "../components/HW_6/MainWr";
 import {AllRoutes} from './AllRoutes'
-import Todos from "../components/HW_6/todos/Todos";
-import Albums from "../components/HW_6/Albums/Albums";
-import Comments from "../components/HW_6/Comments/Comments";
+import {Cars} from "../components/HomeWork_7/cars/Cars";
+import {Posts} from "../components/HomeWork_7/posts/Posts";
+import {Comments} from "../components/HomeWork_7/comments/Comments";
 
 export const router = createBrowserRouter([
     {
@@ -11,17 +11,18 @@ export const router = createBrowserRouter([
         element: <MainWr/>,
         children: [
             {
-                path: AllRoutes.TODOS,
-                element: <Todos/>
+                path: AllRoutes.CARS,
+                element: <Cars/>
             },
             {
-                path:AllRoutes.ALBUMS,
-                element: <Albums/>
+                path: AllRoutes.POSTS,
+                element: <Posts/>
             },
             {
                 path: AllRoutes.COMMENTS,
                 element: <Comments/>
             }
+
         ]
     }
 ])
